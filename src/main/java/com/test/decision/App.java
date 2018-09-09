@@ -30,13 +30,13 @@ public class App {
 
                 case "search":
                     if (comands.length > 2) {
-                        FilesUtil.getNewFiliUtil().searchFiles(comands[1], comands[2], false);
+                        FilesUtil.getNewFiliUtil().searchFiles(comands[2], comands[3], false);
                     }
                     break;
 
                 case "modified":
                     if (comands.length > 2) {
-                        FilesUtil.getNewFiliUtil().modifiedFile(comands[1], comands[2]);
+                        FilesUtil.getNewFiliUtil().modifiedFile(comands[2], comands[3]);
                     }
                     break;
 
