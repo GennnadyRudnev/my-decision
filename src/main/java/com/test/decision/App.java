@@ -9,14 +9,14 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
 
-        try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Введите команду и параметры(если имеются), например: search(команда) absolutePathToFile nameFile");
             System.out.println("Для вывода списка команд введите: list");
             System.out.println("");
 
-            String[] comands = scanner.nextLine().split(" ");
+            String[] comands = args;
 
-            switch (comands[0]) {
+            switch (comands[1]) {
+
                 case "list":
                     System.out.println();
                     for (Commands command : Commands.values()) {
@@ -39,7 +39,14 @@ public class App {
                         FilesUtil.getNewFiliUtil().modifiedFile(comands[1], comands[2]);
                     }
                     break;
+
+                default:
+                    System.out.println();
+                    for (Commands command : Commands.values()) {
+                        System.out.println(command);
+                    }
+                    break;
             }
         }
     }
-}
+
