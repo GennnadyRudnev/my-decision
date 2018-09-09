@@ -1,17 +1,15 @@
 package com.test.decision;
 
-
-import java.util.Scanner;
-
 /**
  * Класс являющийся точкой входа в программу
  */
 public class App {
     public static void main(String[] args) {
 
+        if (args == null) return;
         String[] comands = args;
 
-        switch (comands[1]) {
+        switch (comands[0]) {
 
             case "list":
                 System.out.println();
@@ -26,13 +24,13 @@ public class App {
 
             case "search":
                 if (comands.length > 2) {
-                    FilesUtil.getNewFiliUtil().searchFiles(comands[2], comands[3], false);
+                    FilesUtil.getNewFiliUtil().searchFiles(comands[1], comands[2], false);
                 }
                 break;
 
             case "modified":
                 if (comands.length > 2) {
-                    FilesUtil.getNewFiliUtil().modifiedFile(comands[2], comands[3]);
+                    FilesUtil.getNewFiliUtil().modifiedFile(comands[1], comands[2]);
                 }
                 break;
 
