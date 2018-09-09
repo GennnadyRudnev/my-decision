@@ -17,13 +17,17 @@ list - Выводит список команд и их описание.
 
 После выполнения появиться папка target, вней появиться my-decision-1.0.jar , 
 чтобы выполнить команду нужно ввести в консоль следуещее:
+
 java -jar my-decision-1.0.jar command [par1] [par2] - параметры нужны в зависимости от команды
 
 пример ввода команды, для вывода логических дисков, которые есть в системе (без сетевых дисков):
+
 java -jar my-decision-1.0.jar readDrives
 
 поиск файла:
-java -jar my-decision-1.0.jar search C:\\ test
+
+java -jar my-decision-1.0.jar search C:\ test
 
 вывод списка всех команд:
+
 java -jar my-decision-1.0.jar list
