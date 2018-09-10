@@ -60,7 +60,7 @@ public  final class Drives {
             return result == 0;
 
         } catch(Exception e) {
-            throw new IllegalStateException("Unable to run 'net use' on " + driveLetter, e);
+            throw new IllegalStateException("Не удалось запустить 'net use' на " + driveLetter, e);
         }
     }
 
