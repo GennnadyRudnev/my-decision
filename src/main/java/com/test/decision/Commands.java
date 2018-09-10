@@ -3,7 +3,7 @@ package com.test.decision;
 /**
  * Служит описанием команд
  */
-public enum Commands {
+enum Commands {
     READDRIVES("readDrives", "выводит список логических дисков (локальные, CD/DWD, USB FLASH), кроме сетевых"),
 
     SEARCH("search [absolutePathToFile] [nameFile]", "Поиск файла по его имени: полное совпадение, частичное совпадение \n" +

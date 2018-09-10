@@ -11,7 +11,7 @@ import java.util.Random;
 /**
  * Данный класс служит для работы с файлами
  */
-public final class FilesUtil {
+final class FilesUtil {
     private FilesUtil() {
     }
 
@@ -20,7 +20,7 @@ public final class FilesUtil {
      */
     private List<String> list;
 
-    public static FilesUtil getNewFiliUtil() {
+    static FilesUtil getNewFiliUtil() {
         return new FilesUtil();
     }
 
@@ -32,7 +32,7 @@ public final class FilesUtil {
      * @param cleanList флаг, если установлен в true, то по завершению метода, list
      *                  будет очищен
      */
-    public void searchFiles(String pathFile, String nameFile, boolean cleanList) {
+    void searchFiles(String pathFile, String nameFile, boolean cleanList) {
 
         String[] listFiles = null;
         List<String> fileNames = new ArrayList<>();
@@ -83,10 +83,9 @@ public final class FilesUtil {
      *
      * @param pathFile абсолютный путь к файлу
      * @param nameFile имя файла (полное или его часть)
-     * @throws IOException
-     *         если возникает ошибка ввода/вывода
+     * @throws IOException если возникает ошибка ввода/вывода
      */
-    public void modifiedFile(String pathFile, String nameFile) {
+    void modifiedFile(String pathFile, String nameFile) {
         searchFiles(pathFile, nameFile, false);
 
         if (list.size() == 0) {
@@ -130,19 +129,16 @@ public final class FilesUtil {
 
     /**
      * генерирует случайную строку указанной длины
-     * @param length
-     *        длина строки
-     * @return
-     *        возвращает случайно сгенерированную строку указанной длины
+     *
+     * @param length длина строки
+     * @return возвращает случайно сгенерированную строку указанной длины
      */
-    public static String generateString(int length)
-    {
+    private static String generateString(int length) {
         String characters = "abcdefghijklmnopqrstuvwxyzABCEDFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        Random rng = new Random(characters.length()-1);
+        Random rng = new Random(characters.length() - 1);
 
         char[] text = new char[length];
-        for (int i = 0; i < length; i++)
-        {
+        for (int i = 0; i < length; i++) {
             text[i] = characters.charAt(rng.nextInt(characters.length()));
         }
         return new String(text);
